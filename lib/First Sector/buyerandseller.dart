@@ -1,9 +1,12 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:seko/Button.dart';
+import 'package:seko/First%20Sector/b&sbutton.dart';
+import 'package:seko/First%20Sector/Button2.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class Profile extends StatelessWidget {
+  const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,15 +49,22 @@ class Login extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _buildTextField(context, "Email"),
-                const SizedBox(height: 30), // Space between fields
-                _buildTextField(context, "Password"),
+                Row(children: [
+                  const SizedBox(width: 30),
+                  ProfileButton(buttonText: 'Seller', onPressed: () {}),
+                  const SizedBox(width: 50), // Space between fields
+                  ProfileButton(buttonText: 'Buyer', onPressed: () {}),
+                ]),
+
                 const SizedBox(
                   height: 100,
                 ),
                 const SizedBox(height: 150), // Space before button
-                const LoginButton(
+                NextButton(
                   buttonText: 'Next',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/dateofbirth');
+                  },
                 )
               ],
             ),
@@ -64,38 +74,4 @@ class Login extends StatelessWidget {
       ),
     );
   }
-}
-
-Widget _buildTextField(BuildContext context, String hintText) {
-  return Container(
-    width: 300,
-    height: 70,
-    padding: const EdgeInsets.all(10.0),
-    decoration: BoxDecoration(
-      color: const Color(0xFFD9D9D9),
-      borderRadius: BorderRadius.circular(20),
-      border: Border.all(
-        color: const Color(0xFFFCD956), // Border color
-        width: 1.0, // Border width (thin)
-      ),
-    ),
-    child: TextField(
-      textAlign: TextAlign.center,
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: GoogleFonts.albertSans(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-          color: Colors.black.withOpacity(0.6),
-        ),
-        border: InputBorder.none,
-        contentPadding: const EdgeInsets.symmetric(vertical: 20),
-      ),
-      style: GoogleFonts.albertSans(
-        fontSize: 16,
-        fontWeight: FontWeight.w500,
-        color: Colors.black,
-      ),
-    ),
-  );
 }

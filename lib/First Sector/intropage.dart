@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:seko/Button.dart';
+import 'package:seko/First%20Sector/loginbutton.dart';
 
 class Intropage extends StatelessWidget {
   const Intropage({super.key});
@@ -85,11 +85,11 @@ class Intropage extends StatelessWidget {
                   "Sign Up with Email",
                   "assets/7.png", // Path to your custom Email icon
                   () {
-                    // Add your sign-in action here
+                    Navigator.pushNamed(context, '/signup');
                   },
                 ),
                 const SizedBox(
-                  height: 100,
+                  height: 50,
                 ),
                 Center(
                     child: Text(
@@ -101,7 +101,9 @@ class Intropage extends StatelessWidget {
                   ),
                 )),
                 const SizedBox(height: 30), // Space between buttons
-                 const LoginButton(buttonText: '',),
+                const LoginButton(
+                  buttonText: 'Login',
+                ),
               ],
             ),
           ),

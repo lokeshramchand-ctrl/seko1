@@ -3,30 +3,32 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginButton extends StatelessWidget {
-  final String buttonText; // Add buttonText as a parameter
+class ProfileButton extends StatelessWidget {
+  final String buttonText;
+  final VoidCallback onPressed; // Action to perform on button press
 
-  const LoginButton({
+  const ProfileButton({
     super.key,
-    required this.buttonText, // Make buttonText required
+    required this.buttonText,
+    required this.onPressed, // Make onPressed required
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300, // Fixed width for all buttons
+      width: 150, // Fixed width for all buttons
       height: 70, // Fixed height for all buttons
       padding: const EdgeInsets.all(10.0), // Add padding around the button
       decoration: BoxDecoration(
         color: const Color(0xFFFCD956), // #FCD956 background color
         borderRadius: BorderRadius.circular(20), // Rounded corners
-        
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.black,
-          backgroundColor: Colors.transparent, // Makes button background transparent
+          backgroundColor:
+              Colors.transparent, // Makes button background transparent
           elevation: 0, // Remove button shadow
         ),
         child: Row(

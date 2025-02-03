@@ -1,6 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:seko/Button.dart';
+import 'package:seko/First%20Sector/loginbutton.dart';
 
 class Signuppage extends StatefulWidget {
   const Signuppage({super.key});
@@ -10,7 +12,7 @@ class Signuppage extends StatefulWidget {
 }
 
 class _SignuppageState extends State<Signuppage> {
-  bool isSellerSelected = true; // Initialize to 'Seller' selected
+  bool isSellerSelected = true;
 
   @override
   Widget build(BuildContext context) {
@@ -30,41 +32,38 @@ class _SignuppageState extends State<Signuppage> {
                     style: GoogleFonts.albertSans(
                       fontSize: 24,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black, // Customize color as needed
+                      color: Colors.black, 
                     ),
                   ),
-                  const SizedBox(height: 8), // Space between two text elements
+                  const SizedBox(height: 8), 
                   Text(
-                    'Start a new way of grocery shopping with SEKO', // Text below the logo
+                    'Start a new way of grocery shopping with SEKO', 
                     style: GoogleFonts.albertSans(
                       fontSize: 16,
                       fontWeight: FontWeight.w200,
-                      color: Colors.black, // Customize color as needed
+                      color: Colors.black, 
                     ),
                   ),
                 ],
               ),
             ),
           ),
-          const SizedBox(height: 50), // Additional space if needed
-
-          // Seller/Buyer Toggle Container
+          const SizedBox(height: 50), 
           Center(
             child: Container(
-              width: 300, // Fixed width for container
-              height: 70, // Fixed height for container
+              width: 300,
+              height: 70, 
               padding: const EdgeInsets.all(10.0),
               decoration: BoxDecoration(
                 color: const Color(0xFFD9D9D9),
-                borderRadius: BorderRadius.circular(15), // Rounded corners
+                borderRadius: BorderRadius.circular(15), 
                 border: Border.all(
-                  color: const Color(0xFFFCD956), // Border color
-                  width: 1.0, // Border width (thin)
+                  color: const Color(0xFFFCD956), 
+                  width: 1.0, 
                 ),
               ),
               child: Stack(
                 children: [
-                  // Animated moving container
                   AnimatedAlign(
                     alignment: isSellerSelected
                         ? Alignment.centerLeft
@@ -110,7 +109,6 @@ class _SignuppageState extends State<Signuppage> {
                       ),
                     ),
                   ),
-                  // GestureDetector for "Buyer"
                   GestureDetector(
                     onTap: () {
                       setState(() {
